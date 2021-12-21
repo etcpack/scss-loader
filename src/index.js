@@ -1,9 +1,9 @@
 module.exports = function (source) {
 
-    // 如果是scss文件，就进行转义
-    // if (/\.scss$/.test(this.filepath)) {
+    // 如果不是css文件，才转义
+    if (!(/\.css$/.test(this.filepath))) {
         source = require('@hai2007/algorithm').scss(source);
-    // }
+    }
 
     return source;
 };
